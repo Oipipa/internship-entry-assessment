@@ -132,9 +132,11 @@ Use cases:
    No. `A` is marked abstract; it contains at least one abstract method (`print_name`). Attempting `A("x")` raises TypeError in Python.
 
    - Given an instance of `ObjectC`, are you able to call the method `PrintMessage` defined in `ObjectB`? Please explain your answer.  
+
    The original `B.__print_name` is private to B, so it isn’t inherited in an accessible way. 
 
    - Try to explain as many key features of object-oriented programming as you can find in this example.
+   
       - Abstraction* (A sets a contract).
       - Inheritance* (B, C, D reuse A).
       - Encapsulation* (access modifiers hide internals).
