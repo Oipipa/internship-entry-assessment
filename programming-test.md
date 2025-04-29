@@ -71,7 +71,7 @@ Use cases:
     Subject o-- "n" Observer
    ```
 
-   My flat’s south-facing window fries my mom's plants unless moisture, light, and ambient temperature are balanced. I wired a Pi to three cheap I²C sensors and a peristaltic pump, but each sensor reports at its own cadence (light changes faster than soil). My task was to update the OLED dashboard and decide watering bursts in real time—without hard-coupling everything to one master loop. I wrote a minimalist `EventBus` subject in Rust; every sensor pushes a `Reading` event, while the pump controller and UI subscribe via `on_change`. Components can appear or disappear (I sometimes unplug the temp probe) with zero code tweaks. *Result*: My mom's plants lived through a two-week holiday; swapping a faulty light sensor took thirty seconds and the rest of the system never missed a beat.
+   My flat’s south-facing window fries my mom's plants unless moisture, light, and ambient temperature are balanced. I wired a Pi to three cheap I²C sensors and a peristaltic pump, but each sensor reports at its own cadence (light changes faster than soil). My task was to update the OLED dashboard and decide watering bursts in real time—without hard-coupling everything to one master loop. I wrote a minimalist `EventBus` subject in Rust; every sensor pushes a `Reading` event, while the pump controller and UI subscribe via `on_change`. Components can appear or disappear (I sometimes unplug the temp probe) with zero code tweaks. My mom's plants lived through a two-week holiday; swapping a faulty light sensor took thirty seconds and the rest of the system never missed a beat.
 
    C. Strategy
    
@@ -136,7 +136,7 @@ Use cases:
    The original `B.__print_name` is private to B, so it isn’t inherited in an accessible way. 
 
    - Try to explain as many key features of object-oriented programming as you can find in this example.
-   
+
       - Abstraction* (A sets a contract).
       - Inheritance* (B, C, D reuse A).
       - Encapsulation* (access modifiers hide internals).
