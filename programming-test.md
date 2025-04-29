@@ -6,7 +6,7 @@
 ## Exercise 2
 
 ### 1. **What is your understanding of the term “Design Patterns”?**  
-   In everyday programming we keep running into the same architectural headaches—how to create objects, let them talk to each other, keep them interchangeable, … Over the years practitioners have documented these recurring solutions and given them names. Those “design patterns” are language-independent blueprints that capture the intent of a technique, its forces and trade-offs that speed up team communication. They are not copy-and-paste code, though; they are recipes in a sense. 
+   In everyday programming we keep running into the same architectural headaches—how to create objects, let them talk to each other, keep them interchangeable, etc. Over the years practitioners have documented these recurring solutions and given them names. Those “design patterns” are language-independent blueprints that capture the intent of a technique, its forces and trade-offs that speed up team communication. They are not copy-and-paste code, though; they are recipes in a sense. 
 
 ### 2. **Explain the MVC Pattern**  
 | Layer | What it is | Examples |
