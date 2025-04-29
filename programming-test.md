@@ -77,21 +77,23 @@ Use cases:
    
    ```mermaid
    classDiagram
-      class PumpController {
-         - strategy: PumpStrategy
-         + setStrategy(strategy: PumpStrategy): void
-         + execute(): void
-      }
-      interface PumpStrategy {
-         + run(volume: number): void
-      }
-      class PIDStrategy {
-      }
-      class BangBangStrategy {
-      }
-      PumpController --> PumpStrategy
-      PumpStrategy <|-- PIDStrategy
-      PumpStrategy <|-- BangBangStrategy
+    class PumpController {
+        - strategy: PumpStrategy
+        + setStrategy(ps: PumpStrategy)
+        + execute()
+    }
+
+    class PumpStrategy {
+        <<interface>>
+        + run(volume)
+    }
+
+    class PIDStrategy
+    class BangBangStrategy
+
+    PumpController --> PumpStrategy
+    PumpStrategy <|.. PIDStrategy
+    PumpStrategy <|.. BangBangStrategy
    ```
 
    I’m currently coding a tiny Minecraft-style roguelike, and I need to experiment with multiple terrain algorithms—diamond-square, Perlin noise, and a cellular-automata cave maker—switchable while the game is running. My task is to allow hot-swapping of generation algorithms from the debug console so I can A/B test performance and aesthetic feel. I defined a TerrainStrategy trait with generate(chunk_seed) -> Mesh; concrete strategies live in separate modules. The world builder keeps a mutable strategy reference, and a single console command calls set_strategy("perlin"). During the demo I could fade between rolling hills and labyrinthine caves in real time; profiling showed Perlin was 12 % slower, so I optimised only that module with no need to touch the rest of the engine.
